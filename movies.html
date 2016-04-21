@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title> Gráfico de Barras</title>
+		
+		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="http://code.highcharts.com/highcharts.js"></script>  
+	</head>
+	<body>
+		<div id="container" style="width:100%; height:400px;"></div>
+		<div id="container2" style="width:100%; height:400px;"></div>
+		<script>  
+			$(function () { 
+				$('#container').highcharts({
+					chart: {
+						type: 'column'
+					},
+					title: {
+						text: 'My movies'
+					},
+					xAxis: {
+						categories: ['Worldwide', 'Domestic', 'Brazil', 'Australia']
+					},
+					yAxis: {
+						title: {
+							text: 'Valor arrecadado (US$) corrigido pela inflação'
+						}
+					},
+					series: [{
+						name: 'The Matrix',
+						data: [463517383, 171479930, 0, 10467585]
+					}, {
+						name: 'Inception',
+						data: [825532764, 292576195, 10315556, 36515403]
+ 					}, {
+ 						name: 'The Prestige',
+ 						data: [109676311, 53089891, 1400000, 4607991]
+					}, {
+						name: 'The Martian',
+						data: [630062825, 228433663, 7513748 ,19601155]
+					}, {
+						name: 'Interstellar',
+						data: [675120017, 188020017, 5059875, 16971232]
+					}]								
+				});
+				
+				$('#container2').highcharts({
+					chart: {
+						type: 'line'
+					},
+					tile: {
+						text: 'Arrecadação nas Bilheterias na Semana de Estreia'
+					},
+					xAxis: {
+						categories: ['1º', '2º', '3º', '4º', '5º', '6º', '7º']
+					},
+					yAxis: {
+						title: {
+							text: 'Valor arrecadado (US$) corrigido pela inflação'
+						}
+					},
+					series: [{
+						name: 'The Matrix',
+						data: [8226100, 8153800, 16014600, 18099000, 13476700, 6595400, 5877800]
+					}, {
+						name: 'Inception',
+						data: [24579100, 24589800, 21678400, 11493200, 11019000, 9996900, 9662800]
+					}, {
+						name: 'The Prestige',
+						data: [6830400, 7771600, 5058500, 1587500, 1554200, 1351800, 1358400]
+					}, {
+						name: 'The Martian',
+						data: [18145700, 22251800, 13911100, 4401200, 5457200, 3741500, 3801800]
+					}, {
+						name: 'Interstellar',
+						data: [1415300, 839900, 17684100, 19174600, 12941400, 5529100, 7232900]
+					}]
+				});
+	      	});		
+		</script>
+	</body>
+</html>
